@@ -2,7 +2,7 @@ import {Notify} from 'notiflix';
 //Notiflix.Notify.failure('Oops, there is no country with that name')
 //Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
 // Описаний в документації
-import SimpleLightbox, { __esModule } from "simplelightbox";
+import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 import axios from 'axios';
