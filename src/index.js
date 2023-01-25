@@ -13,14 +13,14 @@ const input = document.querySelector(".my__input");
 const gallery = document.querySelector(".gallery");
 const loadMore = document.querySelector('.load__more');
 
-loadMore.addEventListener('click', fin);
+loadMore.addEventListener('click', createGalery);
 
 const API_KEY = '33084404-d13ec048243a76c408af7526f';
 
 let pageCalck = 0;
 
     ///////////////////////////////////////////////////////
-    async function fin (){
+    async function createGalery (){
         
        pageCalck++;
         const response = await axios.get('https://pixabay.com/api/', {
@@ -68,31 +68,27 @@ let pageCalck = 0;
         captionDelay: 250,
         captionType: "alt",}
         );
+        loadMore.classList.add('visible');////зявиться кнопка
         form.reset();////очистка форми
         }
         //////////////////////////////////.......///////
 
 function f (e){
-    
+  //console.log(e.currentTarget.elements.searchQuery.value);searchQuery це name input
+    ////////////////////
     e.preventDefault();
     gallery.innerHTML = '';
+    pageCalck = 0;
     
-
-    if(input.value.length<3||input.value===""||input.value===" "||(typeof input.value)==="number"){
+    if(input.value.trim()===""){
+      loadMore.classList.remove('visible');
         form.reset();////очистка форми
         Notify.failure('Oops, write word');
         return;
     }else{
-        
-        loadMore.classList.add('visible');
     
-        fin();
-    }
-    
-    
-
-    
-     
+        createGalery();
+    } 
 }
 
 
