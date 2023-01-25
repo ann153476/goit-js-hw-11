@@ -19,7 +19,7 @@ const API_KEY = '33084404-d13ec048243a76c408af7526f';
 
 let pageCalck = 0;
 
-let searchQuery = null
+let searchQuery = null;
 
     ///////////////////////////////////////////////////////
     async function createGalery (){
@@ -39,9 +39,7 @@ let searchQuery = null
         
         if(response.data.totalHits===0){
         Notify.failure('Oops, there is no Photo');return;
-        } else {
-          Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
-        }
+        } 
         
         const markup = response.data.hits.map((galleryItem) =>
         `<div class="photo-card">
@@ -87,10 +85,14 @@ function f (e){
         form.reset();////очистка форми
         Notify.failure('Oops, write word');
         return;
+    }else{
+      Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
+      searchQuery = input.value;
+      createGalery();
     }
-     searchQuery = input.value
+     
 
-        createGalery();
+        
   
 }
 
