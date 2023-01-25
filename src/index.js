@@ -1,4 +1,3 @@
-import './css/styles.css';
 import Notiflix from 'notiflix';
 //Notiflix.Notify.failure('Oops, there is no country with that name')
 //Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
@@ -7,6 +6,8 @@ import SimpleLightbox, { __esModule } from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 import axios from 'axios';
+
+import './css/styles.css';
 const form = document.querySelector('.search-form');
 const input = document.querySelector(".my__input");
 const gallery = document.querySelector(".gallery");
