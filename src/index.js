@@ -41,9 +41,10 @@ let searchQuery = null;
         
         if(response.data.totalHits===0){
         Notify.failure('Oops, there is no Photo');return;
-        } else{
-          Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
-        }
+        } 
+        // else{
+        //   Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
+        // }
         
         const markup = response.data.hits.map((galleryItem) =>
         `<div class="photo-card">
