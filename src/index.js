@@ -36,10 +36,14 @@ let searchQuery = null;
                     per_page:40,
                 }
             });
+
+          
         
         if(response.data.totalHits===0){
         Notify.failure('Oops, there is no Photo');return;
-        } 
+        } else{
+          Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
+        }
         
         const markup = response.data.hits.map((galleryItem) =>
         `<div class="photo-card">
@@ -68,7 +72,12 @@ let searchQuery = null;
         captionDelay: 250,
         captionType: "alt",}
         );
-        loadMore.classList.add('visible');////зявиться кнопка
+        if(pageCalck >= response.data.totalHits/40){
+          loadMore.classList.remove('visible');
+              }else{
+                loadMore.classList.add('visible');////зявиться кнопка
+              }
+        
         form.reset();////очистка форми
         }
         //////////////////////////////////.......///////
@@ -87,7 +96,6 @@ function f (e){
         return;
     }
     
-    //  Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
     
      searchQuery = input.value;
       createGalery();
