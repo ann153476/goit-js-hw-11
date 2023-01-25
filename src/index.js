@@ -1,4 +1,4 @@
-import Notiflix from 'notiflix';
+import {Notify} from 'notiflix';
 //Notiflix.Notify.failure('Oops, there is no country with that name')
 //Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
 // Описаний в документації
@@ -36,9 +36,9 @@ let pageCalck = 0;
             });
         
         if(response.data.totalHits===0){
-        Notiflix.Notify.failure('Oops, there is no Photo');return;
+        Notify.failure('Oops, there is no Photo');return;
         } else {
-            Notiflix.Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
+          Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
         }
         
         const markup = response.data.hits.map((galleryItem) =>
@@ -80,7 +80,7 @@ function f (e){
 
     if(input.value.length<3||input.value===""||input.value===" "||(typeof input.value)==="number"){
         form.reset();////очистка форми
-        Notiflix.Notify.failure('Oops, write word');
+        Notify.failure('Oops, write word');
         return;
     }else{
         
