@@ -19,11 +19,11 @@
   },
   "dependencies": {
     "@swc/helpers": "^0.4.14",
-    "axios": "^1.2.3",
+    "axios": "^1.2.4",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
-    "simplelightbox": "^2.12.1",
-    "regenerator-runtime": "^0.13.11"
+    "regenerator-runtime": "^0.13.11",
+    "simplelightbox": "^2.12.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

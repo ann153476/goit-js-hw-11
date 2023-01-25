@@ -1,5 +1,5 @@
 import {Notify} from 'notiflix';
-//Notiflix.Notify.failure('Oops, there is no country with that name')
+//Notiflix.Notify.failure('Oops, there is no country with that name')////////////
 //Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
 // Описаний в документації
 import SimpleLightbox from "simplelightbox";
