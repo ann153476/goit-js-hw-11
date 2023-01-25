@@ -85,12 +85,12 @@ function f (e){
         form.reset();////очистка форми
         Notify.failure('Oops, write word');
         return;
-    }else{
-      Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
-      searchQuery = input.value;
-      createGalery();
     }
-     
+    
+    //  Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
+    
+     searchQuery = input.value;
+      createGalery();
 
         
   
