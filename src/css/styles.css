@@ -1,0 +1,62 @@
+body{
+    box-sizing: border-box;
+}
+.photo-card img{
+    width: 300px;
+    height: 200px;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gallery>div{
+    margin: 15px;
+    border: 2px solid grey;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px 4px rgb(220, 218, 218);
+}
+.info{
+    display: flex;
+    justify-content: space-around;
+}
+.info p{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+.my__btn,
+.my__input,
+.load__more{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: large;
+    border: 1px solid blueviolet ;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px 4px rgb(220, 218, 218);
+}
+.my__btn:hover,
+.my__input:hover,
+.load__more:hover{
+    background-image: linear-gradient(blueviolet,rgb(61, 19, 101));
+    color: azure;
+    cursor:alias;
+}
+.load__more{
+    opacity: 0;
+    visibility: hidden;
+}
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
