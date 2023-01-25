@@ -19,6 +19,8 @@ const API_KEY = '33084404-d13ec048243a76c408af7526f';
 
 let pageCalck = 0;
 
+let searchQuery = null
+
     ///////////////////////////////////////////////////////
     async function createGalery (){
         
@@ -26,7 +28,7 @@ let pageCalck = 0;
         const response = await axios.get('https://pixabay.com/api/', {
                 params: {
                     key: "33084404-d13ec048243a76c408af7526f",
-                    q:input.value,
+                    q: searchQuery,
                     image_type:"photo",
                     orientation:"horizontal",
                     safesearch:true,
@@ -85,10 +87,11 @@ function f (e){
         form.reset();////очистка форми
         Notify.failure('Oops, write word');
         return;
-    }else{
-    
+    }
+     searchQuery = input.value
+
         createGalery();
-    } 
+  
 }
 
 
