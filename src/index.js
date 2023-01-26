@@ -21,6 +21,7 @@ let pageCalck = 0;
 
 let searchQuery = null;
 
+let word="";
     ///////////////////////////////////////////////////////
     async function createGalery (){
         
@@ -84,10 +85,15 @@ let searchQuery = null;
         //////////////////////////////////.......///////
 
 function f (e){
-  //console.log(e.currentTarget.elements.searchQuery.value);searchQuery це name input
+  console.log(e.currentTarget.elements.searchQuery.value);//searchQuery це name input
+   word = e.currentTarget.elements.searchQuery.value;
+  
     ////////////////////
     e.preventDefault();
-    gallery.innerHTML = '';
+    if(searchQuery===word){
+      return;
+    }else{
+      gallery.innerHTML = '';
     pageCalck = 0;
     
     if(input.value.trim()===""){
@@ -100,13 +106,15 @@ function f (e){
     
      searchQuery = input.value;
       createGalery();
+    }
+    
 
         
   
 }
 
 
-form.addEventListener('submit', f );  //  , pegeCalckClean
+form.addEventListener('submit', f );  
 
 
 
